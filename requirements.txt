@@ -12,5 +12,5 @@ numpy==1.21.6
 SQLAlchemy==2.0.23
 typing_extensions==4.7.1
 waitress==2.1.2
-Werkzeug==3.0.1
+Werkzeug==2.2.3
 zipp==3.10.0
