@@ -62,8 +62,9 @@ pip freeze > requirements.txt
 -> This command will generate a list of python packages and theri versions installed in your current project
 
 
-
-
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" >
+-> This is how you call for a static file in 'static' folder in Flask using Jinja Templating
+-> Learning from this research - External CSS do not directly override Bootstrap formatting, it requires a special syntax! [Probably !important - Do research on this]
 
 
 
