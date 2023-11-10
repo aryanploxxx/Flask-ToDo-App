@@ -54,7 +54,8 @@ we use template inheritance where we can keep common parts of a page in a sepera
 parts for that file from another .html file.
 
 
-
+Use gunicorn to run the app in deployment.
+Command is gunicorn app:app -> the left side of the column is the file nam eyou want to run
 
 
 
