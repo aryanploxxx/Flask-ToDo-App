@@ -58,7 +58,8 @@ Use gunicorn to run the app in deployment.
 Command is gunicorn app:app -> the left side of the column is the file nam eyou want to run
 
 
-
+pip freeze > requirements.txt
+-> This command will generate a list of python packages and theri versions installed in your current project
 
 
 
