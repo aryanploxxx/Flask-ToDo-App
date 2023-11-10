@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <div class="container">
+        <h1>Add a ToDo</h1>
+        <form action='/' method="POST">
+            <div class="mb-3">
+              <label for="title" class="form-label">ToDo Title</label>
+              <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="desc" class="form-label">Description</label>
+              <input type="text" class="form-control" name="desc" id="desc">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>    
+    <div>
+    
+    <div class="conatiner my-3">
+        <h1>Your ToDos</h1>
+        {% if allTodo | length==0 %}  
+          <div class="alert alert-danger" role="alert">
+            To-Do list is empty!
+          </div>
+        
+        {% else %}
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">SNo</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Desc</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+              <!-- For loop of Jinja2 -->
+              {% for todo in allTodo %} 
+              <tr>
+                <!--
+                  <th scope="row">{{todo.sno}}</th> 
+                  This was not a good method because if we deleted rows, it would jump form like 7 to 9 in 
+                  counting since it was fetching numbers from the database
+                -->
+                <td>{{loop.index}}</td>
+                <td>{{todo.title}}</td>
+                <td>{{todo.desc}}</td>
+                <td>{{todo.date_created}}</td>
+                <td>
+                  <a href="/delete/{{todo.sno}}"><button type="button" class="btn btn-outline-dark mx-1 btm-sm">Delete</button></a>
+                  <a href="/update/{{todo.sno}}"><button type="button" class="btn btn-outline-dark mx-1 btm-sm">Update</button></a>
+                </td>
+              </tr>
+              {% endfor %}
+            {% endif %}
+            </tbody>
+          </table>
+    </div>
+
+{% endblock body %}

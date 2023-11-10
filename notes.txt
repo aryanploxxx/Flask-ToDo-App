@@ -1,0 +1,71 @@
+pip install virtualenv
+-> did this to create install the module virtual environment
+virtualenv env -> to create a virtual environment named env
+
+Set-ExecutionPolicy unrestricted
+-> This command is to be run by peeps who have error in installing the virtual environment.
+-> This command will run in Winndows Powershell Admin
+
+Virtual Environment is basically nothing but an isolated instance/copy of Python wherein the packages and versions 
+installed here won't affect the actual versions and packages installed in your PC. 
+
+To create a Virtual Environment run this command -> virtualenv env 
+-> Where env is the name of the environment
+
+Now this environment needs to be activated using this command. The extension is ps1 since we are activating it in powershell.
+If this command gives an error then set the execution policy.
+.\env\Scripts\activate.ps1 
+(env) PS C:\Users\ARYAN GUPTA\OneDrive\Desktop\Flask>
+-> you can notice the small env besides the file path, this indicates that all work from now on will be done in the Virtual Environment
+
+pip install flask
+
+Make a flask minimal app
+
+Make two directories - Static and Templates
+-> Static directory serves as a way to server the static files in your project, directly on a url
+   Ex. a file ./static/sample.txt can be found on http://127.0.0.1:5000/static/sample.txt
+-> Templates directory acts as a way to serve and render html files 
+
+
+Now we will create a database in flask itself.
+It can be achieved with the help of SQLAlchemy package in flask that can be used to change database with the help of python
+-> pip install flask-sqlalchemy
+
+When creating a database, we need to create a class that stores all the columns and valuues we need inside our database
+
+Now, when the entire schema is created in a class, in the terminal open a python interpretor by simply typing python
+And now in this interpretor import db from app and run queries to create the database
+-> from app import db
+-> db.create_all() [might give error, can ignore that]
+-> exit()
+
+https://inloop.github.io/sqlite-viewer/
+-> Drag and Drop our todo.db here to see the contents of our database
+
+Jinja2 Snippet Extension For VS Code
+-> Install this extension in VSCode
+-> Jinja2 is a templating engine and is used to display a python variable in html page
+
+
+Template Inheritance feature is present in jinja2, where if we use a single component that is common to multiple pages
+and we want to make a slight chnage in it, we would need to make a lot many changes in different files, to prevent that
+we use template inheritance where we can keep common parts of a page in a seperate file base.html and import the different 
+parts for that file from another .html file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
